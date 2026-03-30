@@ -4,6 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Autonomous Surgical Robotic Aspirator</title>
+
   <style>
     :root {
       --bg: #f6f8fb;
@@ -20,9 +21,10 @@
 
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
+
     body {
       margin: 0;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: Inter, system-ui, sans-serif;
       background: linear-gradient(180deg, #f7f9fc 0%, #eef3fa 100%);
       color: var(--text);
       line-height: 1.65;
@@ -47,28 +49,16 @@
 
     .nav {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 16px;
       padding: 14px 0;
-    }
-
-    .brand {
-      font-weight: 800;
-      letter-spacing: -0.02em;
-      font-size: 1rem;
     }
 
     .navlinks {
       display: flex;
-      flex-wrap: wrap;
       gap: 14px;
-      font-size: 0.95rem;
     }
 
-    .hero {
-      padding: 72px 0 32px;
-    }
+    .hero { padding: 72px 0 32px; }
 
     .hero-card {
       background: var(--panel);
@@ -78,74 +68,35 @@
       padding: 40px;
     }
 
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: var(--accent-soft);
-      color: var(--accent);
-      font-size: 0.9rem;
-      font-weight: 700;
-      margin-bottom: 16px;
-    }
-
     h1 {
-      margin: 0 0 14px;
       font-size: clamp(2rem, 5vw, 3.4rem);
-      line-height: 1.08;
-      letter-spacing: -0.04em;
-    }
-
-    .subtitle {
-      color: var(--muted);
-      font-size: 1.08rem;
-      max-width: 900px;
-      margin-bottom: 22px;
+      margin-bottom: 14px;
     }
 
     .authors {
       color: var(--muted);
-      font-size: 0.98rem;
       margin-bottom: 24px;
     }
 
     .button-row {
       display: flex;
-      flex-wrap: wrap;
       gap: 12px;
-      margin-top: 20px;
     }
 
     .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
       padding: 12px 18px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #fff;
-      color: var(--text);
       font-weight: 700;
-      transition: transform 0.15s ease, box-shadow 0.15s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 18px rgba(18, 38, 63, 0.08);
-      text-decoration: none;
     }
 
     .btn.primary {
       background: var(--accent);
       color: white;
-      border-color: var(--accent);
     }
 
-    section {
-      padding: 24px 0;
-    }
+    section { padding: 24px 0; }
 
     .section-card {
       background: var(--panel);
@@ -155,31 +106,13 @@
       padding: 30px;
     }
 
-    h2 {
-      margin: 0 0 14px;
-      font-size: 1.7rem;
-      letter-spacing: -0.03em;
-    }
-
-    h3 {
-      margin: 0 0 10px;
-      font-size: 1.15rem;
-      letter-spacing: -0.02em;
-    }
-
-    p { margin: 0 0 14px; }
-
     .grid {
       display: grid;
       gap: 18px;
     }
 
     .grid.two {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .grid.three {
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, 1fr);
     }
 
     .feature {
@@ -189,220 +122,127 @@
       background: #fbfdff;
     }
 
-    .feature p:last-child,
-    .section-card p:last-child { margin-bottom: 0; }
-
-    .placeholder {
-      display: grid;
-      place-items: center;
-      min-height: 260px;
-      border: 2px dashed #bfd0e2;
-      border-radius: 18px;
-      background: linear-gradient(180deg, #f9fbfe 0%, #f1f6fc 100%);
-      color: #6a7b8d;
-      text-align: center;
-      padding: 16px;
-      font-weight: 600;
-    }
-
-    .results-list {
-      display: grid;
-      gap: 14px;
-      margin-top: 10px;
-    }
-
-    .result-item {
-      border-left: 4px solid var(--accent);
-      padding: 12px 16px;
-      background: #fbfdff;
-      border-radius: 0 14px 14px 0;
-    }
-
-    .metrics {
-      display: grid;
-      gap: 16px;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      margin-top: 18px;
-    }
-
-    .metric {
-      background: #fbfdff;
-      border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 20px;
-    }
-
-    .metric .value {
-      font-size: 1.8rem;
-      font-weight: 800;
-      letter-spacing: -0.03em;
-      margin-bottom: 6px;
-    }
-
-    .muted { color: var(--muted); }
-
     .bibtex {
-      white-space: pre-wrap;
       background: #0f1720;
       color: #e7eef8;
       padding: 20px;
       border-radius: 18px;
-      overflow-x: auto;
-      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 0.92rem;
-    }
-
-    footer {
-      padding: 24px 0 48px;
-      color: var(--muted);
-      font-size: 0.95rem;
-      text-align: center;
+      font-family: monospace;
     }
 
     @media (max-width: 920px) {
-      .grid.two, .grid.three, .metrics {
-        grid-template-columns: 1fr;
-      }
-      .hero-card, .section-card { padding: 24px; }
-      .nav { align-items: flex-start; flex-direction: column; }
+      .grid.two { grid-template-columns: 1fr; }
     }
   </style>
 </head>
+
 <body>
-  <div class="topbar">
-    <div class="container nav">
-      <div class="brand">Autonomous Surgical Robotic Aspirator</div>
-      <div class="navlinks">
-        <a href="#abstract">Abstract</a>
-        <a href="#results">Results</a>
-        <a href="#citation">Citation</a>
+
+<div class="topbar">
+  <div class="container nav">
+    <div><b>Autonomous Surgical Robotic Aspirator</b></div>
+    <div class="navlinks">
+      <a href="#abstract">Abstract</a>
+      <a href="#contributions">Contributions</a>
+      <a href="#results">Results</a>
+      <a href="#citation">Citation</a>
+    </div>
+  </div>
+</div>
+
+<header class="hero">
+  <div class="container">
+    <div class="hero-card">
+      <h1>Design and Implementation of an Autonomous Surgical Robotic Aspirator</h1>
+      <div class="authors">
+        Eva Góngora-Rodríguez et al. — Universidad de Málaga
+      </div>
+
+      <div class="button-row">
+        <a class="btn primary" href="#">Paper</a>
+        <a class="btn" href="https://github.com/SurgicalRoboticsUMA/autonomous_aspirator/tree/main/code" target="_blank">Code</a>
+        <a class="btn" href="#contributions">Figures</a>
       </div>
     </div>
   </div>
+</header>
 
-  <header class="hero">
-    <div class="container">
-      <div class="hero-card">
-        <div class="eyebrow">Paper Page</div>
-        <h1>Design and Implementation of an Autonomous Surgical Robotic Aspirator</h1>
-        <div class="authors">
-          Eva Góngora-Rodríguez, Irene Rivas-Blanco, Álvaro Galán-Cuenca, Carmen López-Casado, Isabel García-Morales, and Víctor F. Muñoz<br />
-          Department of Systems Engineering and Automation, Universidad de Málaga, Andalucía Tech
+<main>
+
+<section id="abstract">
+  <div class="container">
+    <div class="section-card">
+      <h2>Abstract</h2>
+      <p>
+        This work presents the design and implementation of an autonomous robotic aspirator capable of detecting and removing intraoperative bleeding without continuous human intervention.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contributions">
+  <div class="container">
+
+    <div class="section-card">
+      <h2>Key Contributions</h2>
+
+      <div class="grid two">
+        <div class="feature">
+          <h3>Unified Framework</h3>
+          <p>Integration of perception, planning and control.</p>
         </div>
-        <div class="button-row">
-          <a class="btn primary" href="#" title="Replace with your paper link">Paper</a>
-          <a class="btn" href="https://github.com/SurgicalRoboticsUMA/autonomous_aspirator/tree/main/code" target="_blank">Code</a>
-          <a class="btn" href="#media" title="Jump to media section">Videos</a>
-          <a class="btn" href="#citation">BibTeX</a>
+
+        <div class="feature">
+          <h3>Strategies</h3>
+          <p>Comparison of multiple suction strategies.</p>
         </div>
+
+        <div class="feature">
+          <h3>Evaluation</h3>
+          <p>Geometric analysis of performance.</p>
+        </div>
+
+        <div class="feature">
+          <h3>Validation</h3>
+          <p>Extensive in vitro experiments.</p>
+        </div>
+      </div>
+
+      <!-- IMÁGENES -->
+      <div class="grid two" style="margin-top: 20px;">
+        <img src="media/arquitectura.png" style="width:100%; border-radius:12px;">
+        <img src="media/Escenario.PNG" style="width:100%; border-radius:12px;">
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section id="results">
+  <div class="container">
+    <div class="section-card">
+      <h2>Results</h2>
+      <p>Insert your results here.</p>
+    </div>
+  </div>
+</section>
+
+<section id="citation">
+  <div class="container">
+    <div class="section-card">
+      <h2>Citation</h2>
+      <div class="bibtex">
+@article{gongora2026aspirator,
+  title={Autonomous Surgical Robotic Aspirator},
+  year={2026}
+}
       </div>
     </div>
-  </header>
+  </div>
+</section>
 
-  <main>
-    <section id="abstract">
-      <div class="container">
-        <div class="section-card">
-          <h2>Abstract</h2>
-          <p>
-            Robotic assistance in minimally invasive surgery has significantly improved precision and dexterity; however, many supportive tasks, such as blood aspiration, still rely on manual operation. This work presents the design and implementation of an autonomous robotic aspirator capable of detecting and removing intraoperative bleeding without continuous human intervention.
-          </p>
-          <p>
-          The proposed system integrates a perception module based on a convolutional neural network for real-time blood segmentation, a task planner for high-level actions execution, and a control strategy based on artificial potential fields for autonomous navigation. Additionally, a mixed-reality human–robot interaction interface is incorporated to enable system supervision and seamless transition to teleoperation when required.          </p>
-          </p>
-          <p>
-          The system was experimentally validated with a set of in-vitro experiments under three representative bleeding scenarios, evaluating four suction strategies based on the computation method for the target selection. Results demonstrate fast reaction times (below 0.04~s) and high blood removal rates (above 80\% in all cases). The comparative analysis reveals that the performance of the suction strategies is scenario-dependent and highlights a trade-off between suction efficiency and removed are. 
-          </p>
-          <p>
-            These findings support the feasibility of autonomous robotic aspiration and provide insights into the design of adaptive strategies for surgical assistance, contributing toward increased autonomy and improved workflow efficiency in minimally invasive procedures.
-          </p>
-            
-    </section>
+</main>
 
-    <section>
-      <div class="container">
-        <div class="grid two">
-          <div class="section-card">
-            <h2>Key Contributions</h2>
-               <div class="grid two">
-                    <div class="feature">
-                      <h3>Unified Framework</h3>
-                      <p>
-                        A unified framework for autonomous surgical blood aspiration integrating perception, task planning, control, and mixed-reality supervision.
-                      </p>
-                    </div>
-                  
-                    <div class="feature">
-                      <h3>Target Selection Strategies</h3>
-                      <p>
-                        A comparative analysis of four centroid-based target selection strategies for blood aspiration.
-                      </p>
-                    </div>
-                  
-                    <div class="feature">
-                      <h3>Geometric Evaluation</h3>
-                      <p>
-                        A geometric evaluation of pairwise target discrepancies and their relationship with robotic performance.
-                      </p>
-                    </div>
-                  
-                    <div class="feature">
-                      <h3>Experimental Validation</h3>
-                      <p>
-                        Extensive in vitro validation under representative bleeding scenarios, revealing scenario-dependent behavior and trade-offs.
-                      </p>
-                    </div>
-                  </div>
-          </div>
-          <div class="section-card">
-            <h2>Insert Main Figure Here</h2>
-            <div class="placeholder">
-              <img src="media/arquitectura.png" alt="Global Architecture" width="300">
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="results">
-      <div class="container">
-        <div class="grid two">
-          <div class="section-card">
-            <h2>Insert Quantitative Results</h2>
-            <div class="placeholder">
-              Add your best results figure here.<br />
-              Suggested content: efficiency boxplots or summary comparison figure.
-            </div>
-          </div>
-          <div class="section-card">
-            <h2>Insert Segmentation Examples</h2>
-            <div class="placeholder">
-              Add qualitative segmentation examples here.<br />
-              Suggested content: frame + predicted mask pairs.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="citation">
-      <div class="container">
-        <div class="section-card">
-          <h2>Citation</h2>
-          <p>If you use this project page, code, or results, please cite the paper.</p>
-          <div class="bibtex">@article{gongora2026aspirator,
-  title   = {Design and Implementation of an Autonomous Surgical Robotic Aspirator},
-  author  = {G{\'o}ngora-Rodr{\'i}guez, Eva and Rivas-Blanco, Irene and Gal{\'a}n-Cuenca, {\'A}lvaro and L{\'o}pez-Casado, Carmen and Garc{\'i}a-Morales, Isabel and Mu{\~n}oz, V{\'i}ctor F.},
-  journal = {To appear},
-  year    = {2026}
-}</div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    
-  </footer>
 </body>
 </html>
