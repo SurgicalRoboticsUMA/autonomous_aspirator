@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Autonomous Surgical Robotic Aspirator</title>
+  <style>
+    :root {
+      --bg: #f6f8fb;
+      --panel: #ffffff;
+      --text: #16202a;
+      --muted: #5d6b79;
+      --accent: #1e6fd9;
+      --accent-soft: #e9f1ff;
+      --border: #d9e2ec;
+      --shadow: 0 10px 30px rgba(18, 38, 63, 0.08);
+      --radius: 20px;
+      --maxw: 1120px;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f7f9fc 0%, #eef3fa 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    .container {
+      width: min(var(--maxw), calc(100% - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(14px);
+      background: rgba(246, 248, 251, 0.85);
+      border-bottom: 1px solid rgba(217, 226, 236, 0.8);
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 14px 0;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      font-size: 1rem;
+    }
+
+    .navlinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 72px 0 32px;
+    }
+
+    .hero-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 28px;
+      box-shadow: var(--shadow);
+      padding: 40px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent);
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      margin: 0 0 14px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.08;
+      letter-spacing: -0.04em;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 900px;
+      margin-bottom: 22px;
+    }
+
+    .authors {
+      color: var(--muted);
+      font-size: 0.98rem;
+      margin-bottom: 24px;
+    }
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #fff;
+      color: var(--text);
+      font-weight: 700;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 18px rgba(18, 38, 63, 0.08);
+      text-decoration: none;
+    }
+
+    .btn.primary {
+      background: var(--accent);
+      color: white;
+      border-color: var(--accent);
+    }
+
+    section {
+      padding: 24px 0;
+    }
+
+    .section-card {
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 30px;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.7rem;
+      letter-spacing: -0.03em;
+    }
+
+    h3 {
+      margin: 0 0 10px;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    p { margin: 0 0 14px; }
+
+    .grid {
+      display: grid;
+      gap: 18px;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .grid.three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .feature {
+      padding: 20px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: #fbfdff;
+    }
+
+    .feature p:last-child,
+    .section-card p:last-child { margin-bottom: 0; }
+
+    .placeholder {
+      display: grid;
+      place-items: center;
+      min-height: 260px;
+      border: 2px dashed #bfd0e2;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #f9fbfe 0%, #f1f6fc 100%);
+      color: #6a7b8d;
+      text-align: center;
+      padding: 16px;
+      font-weight: 600;
+    }
+
+    .results-list {
+      display: grid;
+      gap: 14px;
+      margin-top: 10px;
+    }
+
+    .result-item {
+      border-left: 4px solid var(--accent);
+      padding: 12px 16px;
+      background: #fbfdff;
+      border-radius: 0 14px 14px 0;
+    }
+
+    .metrics {
+      display: grid;
+      gap: 16px;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      margin-top: 18px;
+    }
+
+    .metric {
+      background: #fbfdff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 20px;
+    }
+
+    .metric .value {
+      font-size: 1.8rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      margin-bottom: 6px;
+    }
+
+    .muted { color: var(--muted); }
+
+    .bibtex {
+      white-space: pre-wrap;
+      background: #0f1720;
+      color: #e7eef8;
+      padding: 20px;
+      border-radius: 18px;
+      overflow-x: auto;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    footer {
+      padding: 24px 0 48px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      text-align: center;
+    }
+
+    @media (max-width: 920px) {
+      .grid.two, .grid.three, .metrics {
+        grid-template-columns: 1fr;
+      }
+      .hero-card, .section-card { padding: 24px; }
+      .nav { align-items: flex-start; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container nav">
+      <div class="brand">Autonomous Surgical Robotic Aspirator</div>
+      <div class="navlinks">
+        <a href="#overview">Overview</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#media">Media</a>
+        <a href="#citation">Citation</a>
+      </div>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="container">
+      <div class="hero-card">
+        <div class="eyebrow">Project Page</div>
+        <h1>Design and Implementation of an Autonomous Surgical Robotic Aspirator</h1>
+        <p class="subtitle">
+          An autonomous robotic assistant for intraoperative blood aspiration in minimally invasive surgery, combining real-time bleeding segmentation, centroid-based target selection, artificial-potential-field navigation, and mixed-reality human supervision.
+        </p>
+        <div class="authors">
+          Eva Góngora-Rodríguez, Irene Rivas-Blanco, Álvaro Galán-Cuenca, Carmen López-Casado, Isabel García-Morales, and Víctor F. Muñoz<br />
+          Department of Systems Engineering and Automation, Universidad de Málaga, Andalucía Tech
+        </div>
+        <div class="button-row">
+          <a class="btn primary" href="#" title="Replace with your paper link">Paper</a>
+          <a class="btn" href="#" title="Replace with your code repository link">Code</a>
+          <a class="btn" href="#media" title="Jump to media section">Videos</a>
+          <a class="btn" href="#citation">BibTeX</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="overview">
+      <div class="container">
+        <div class="section-card">
+          <h2>Overview</h2>
+          <p>
+            Robotic assistance has improved precision and dexterity in minimally invasive surgery, but supportive tasks such as blood aspiration are still commonly performed manually. This work introduces an autonomous robotic aspirator that detects bleeding regions, plans a suction target, navigates the instrument toward the target, and performs aspiration under human supervision.
+          </p>
+          <p>
+            The full system combines a CNN-based bleeding segmentation module, a task planner for high-level action triggering, an autonomous navigation layer based on artificial potential fields, and a mixed-reality interface that allows supervision and rapid switching to teleoperation when needed.
+          </p>
+          <div class="metrics">
+            <div class="metric">
+              <div class="value">&lt; 0.04 s</div>
+              <div><strong>Reaction time</strong></div>
+              <div class="muted">Fast response across all evaluated strategies and scenarios.</div>
+            </div>
+            <div class="metric">
+              <div class="value">&gt; 80%</div>
+              <div><strong>Blood removal</strong></div>
+              <div class="muted">High suctioned area in all evaluated conditions.</div>
+            </div>
+            <div class="metric">
+              <div class="value">4</div>
+              <div><strong>Target strategies</strong></div>
+              <div class="muted">Geometric, source-oriented, front-oriented, and deepest-point targets.</div>
+            </div>
+            <div class="metric">
+              <div class="value">3</div>
+              <div><strong>Bleeding scenarios</strong></div>
+              <div class="muted">Source-centered, downstream flow, and bilateral flow distributions.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid two">
+          <div class="section-card">
+            <h2>Key Contributions</h2>
+            <div class="results-list">
+              <div class="result-item">A unified framework for autonomous surgical blood aspiration integrating perception, task planning, control, and mixed-reality supervision.</div>
+              <div class="result-item">A comparative analysis of four centroid-based target selection strategies for blood aspiration.</div>
+              <div class="result-item">A geometric evaluation of pairwise target discrepancies and their relationship with robotic performance.</div>
+              <div class="result-item">An extensive in vitro validation under representative bleeding scenarios, revealing scenario-dependent strategy behavior and a trade-off between efficiency and removal completeness.</div>
+            </div>
+          </div>
+          <div class="section-card">
+            <h2>Insert Main Figure Here</h2>
+            <div class="placeholder">
+              Replace this box with your overview figure, teaser image, or system photo.<br />
+              Suggested content: surgical scenario overview or system architecture.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="method">
+      <div class="container">
+        <div class="section-card">
+          <h2>Method</h2>
+          <div class="grid two" style="margin-top: 12px;">
+            <div class="feature">
+              <h3>1. Perception</h3>
+              <p>
+                Endoscopic images are processed by a U-Net-based segmentation network to detect bleeding regions in real time. From the segmented mask, the system extracts region area, centroid location, and a temporal persistence descriptor encoding the age of blood pixels.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>2. Decision-making</h3>
+              <p>
+                The task planner selects a target blood region, updates its 3D target location, commands navigation, and activates or deactivates suction depending on the distance between the tool tip and the selected target.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>3. Autonomous Navigation</h3>
+              <p>
+                The local planner uses artificial potential fields to drive the suction tool toward the selected target while respecting remote-center-of-motion constraints. The current implementation primarily uses an attractive-field formulation and includes practical safeguards such as velocity saturation and target timeouts.
+              </p>
+            </div>
+            <div class="feature">
+              <h3>4. Human Supervision</h3>
+              <p>
+                A mixed-reality interface based on a VR headset displays the endoscopic view together with scene and system status information, allowing supervision and immediate switching to teleoperation with a haptic controller.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid two">
+          <div class="section-card">
+            <h2>Centroid-Based Target Strategies</h2>
+            <div class="grid two" style="margin-top: 12px;">
+              <div class="feature">
+                <h3>C1 — Geometric centroid</h3>
+                <p>Uses the global spatial distribution of the bleeding region.</p>
+              </div>
+              <div class="feature">
+                <h3>C2 — Source-oriented centroid</h3>
+                <p>Prioritizes persistent pixels and tends to stay near the bleeding source.</p>
+              </div>
+              <div class="feature">
+                <h3>C3 — Front-oriented centroid</h3>
+                <p>Gives more weight to recent pixels and follows the bleeding front.</p>
+              </div>
+              <div class="feature">
+                <h3>C4 — Deepest-point target</h3>
+                <p>Selects the most interior point of the segmented bleeding region.</p>
+              </div>
+            </div>
+          </div>
+          <div class="section-card">
+            <h2>Bleeding Scenarios</h2>
+            <div class="grid three" style="margin-top: 12px;">
+              <div class="feature">
+                <h3>S1</h3>
+                <p>Source-centered accumulation: blood stays near the source in a near-horizontal configuration.</p>
+              </div>
+              <div class="feature">
+                <h3>S2</h3>
+                <p>Downstream flow accumulation: blood flows away from the source and accumulates distally.</p>
+              </div>
+              <div class="feature">
+                <h3>S3</h3>
+                <p>Bilateral flow distribution: blood spreads toward multiple accumulation regions.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="results">
+      <div class="container">
+        <div class="section-card">
+          <h2>Results</h2>
+          <p>
+            The bleeding segmentation model achieved strong pixel-wise prediction accuracy and stable threshold behavior, with a Dice coefficient of 0.686, IoU of 0.565, precision of 0.72, and recall of 0.73 on the independent test set. Qualitative results show that the system reliably captures the main bleeding regions under varying illumination, tissue appearance, and tool presence.
+          </p>
+          <div class="results-list">
+            <div class="result-item"><strong>Geometric analysis:</strong> centroid strategies generate distinct target locations across scenarios. C1 and C3 remain consistently close in spatial distance, but that geometric similarity does not necessarily translate into equivalent suction behavior.</div>
+            <div class="result-item"><strong>Scenario-dependent performance:</strong> no single target strategy is optimal in all cases. C2 and C4 perform best in source-centered bleeding, C4 dominates in downstream flow, and C1 is strongest in bilateral flow.</div>
+            <div class="result-item"><strong>Trade-off:</strong> lower suction times and higher suction efficiency tend to be associated with lower final suctioned area, while longer executions often clear a larger fraction of residual blood.</div>
+            <div class="result-item"><strong>Robustness:</strong> boxplots reveal meaningful differences in variability across strategies, especially under complex blood dynamics.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="grid two">
+          <div class="section-card">
+            <h2>Insert Quantitative Results</h2>
+            <div class="placeholder">
+              Add your best results figure here.<br />
+              Suggested content: efficiency boxplots or summary comparison figure.
+            </div>
+          </div>
+          <div class="section-card">
+            <h2>Insert Segmentation Examples</h2>
+            <div class="placeholder">
+              Add qualitative segmentation examples here.<br />
+              Suggested content: frame + predicted mask pairs.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="media">
+      <div class="container">
+        <div class="grid two">
+          <div class="section-card">
+            <h2>Videos</h2>
+            <div class="placeholder">
+              Embed your demo videos here.<br />
+              You can replace this block with YouTube iframes or HTML5 video tags.
+            </div>
+          </div>
+          <div class="section-card">
+            <h2>Code & Resources</h2>
+            <p>
+              Add links to your repository, datasets, CAD files, ROS packages, trained models, or supplementary materials.
+            </p>
+            <div class="button-row">
+              <a class="btn" href="#" title="Replace with repository link">GitHub Repository</a>
+              <a class="btn" href="#" title="Replace with supplementary material link">Supplementary Material</a>
+              <a class="btn" href="#" title="Replace with dataset link">Dataset</a>
+            </div>
+            <p class="muted" style="margin-top: 18px;">
+              Suggested additions: hardware setup details, control diagrams, videos comparing C1–C4, and a short explanation of how to reproduce the experiments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="citation">
+      <div class="container">
+        <div class="section-card">
+          <h2>Citation</h2>
+          <p>If you use this project page, code, or results, please cite the paper.</p>
+          <div class="bibtex">@article{gongora2026aspirator,
+  title   = {Design and Implementation of an Autonomous Surgical Robotic Aspirator},
+  author  = {G{\'o}ngora-Rodr{\'i}guez, Eva and Rivas-Blanco, Irene and Gal{\'a}n-Cuenca, {\'A}lvaro and L{\'o}pez-Casado, Carmen and Garc{\'i}a-Morales, Isabel and Mu{\~n}oz, V{\'i}ctor F.},
+  journal = {To appear},
+  year    = {2026}
+}</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Replace placeholder buttons, figures, and media links with your final assets before publishing on GitHub Pages.
+  </footer>
+</body>
+</html>
