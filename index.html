@@ -322,30 +322,6 @@
             These findings support the feasibility of autonomous robotic aspiration and provide insights into the design of adaptive strategies for surgical assistance, contributing toward increased autonomy and improved workflow efficiency in minimally invasive procedures.
           </p>
             
-          <div class="metrics">
-            <div class="metric">
-              <div class="value">&lt; 0.04 s</div>
-              <div><strong>Reaction time</strong></div>
-              <div class="muted">Fast response across all evaluated strategies and scenarios.</div>
-            </div>
-            <div class="metric">
-              <div class="value">&gt; 80%</div>
-              <div><strong>Blood removal</strong></div>
-              <div class="muted">High suctioned area in all evaluated conditions.</div>
-            </div>
-            <div class="metric">
-              <div class="value">4</div>
-              <div><strong>Target strategies</strong></div>
-              <div class="muted">Geometric, source-oriented, front-oriented, and deepest-point targets.</div>
-            </div>
-            <div class="metric">
-              <div class="value">3</div>
-              <div><strong>Bleeding scenarios</strong></div>
-              <div class="muted">Source-centered, downstream flow, and bilateral flow distributions.</div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
     <section>
@@ -363,87 +339,7 @@
           <div class="section-card">
             <h2>Insert Main Figure Here</h2>
             <div class="placeholder">
-              Replace this box with your overview figure, teaser image, or system photo.<br />
-              Suggested content: surgical scenario overview or system architecture.
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="method">
-      <div class="container">
-        <div class="section-card">
-          <h2>Method</h2>
-          <div class="grid two" style="margin-top: 12px;">
-            <div class="feature">
-              <h3>1. Perception</h3>
-              <p>
-                Endoscopic images are processed by a U-Net-based segmentation network to detect bleeding regions in real time. From the segmented mask, the system extracts region area, centroid location, and a temporal persistence descriptor encoding the age of blood pixels.
-              </p>
-            </div>
-            <div class="feature">
-              <h3>2. Decision-making</h3>
-              <p>
-                The task planner selects a target blood region, updates its 3D target location, commands navigation, and activates or deactivates suction depending on the distance between the tool tip and the selected target.
-              </p>
-            </div>
-            <div class="feature">
-              <h3>3. Autonomous Navigation</h3>
-              <p>
-                The local planner uses artificial potential fields to drive the suction tool toward the selected target while respecting remote-center-of-motion constraints. The current implementation primarily uses an attractive-field formulation and includes practical safeguards such as velocity saturation and target timeouts.
-              </p>
-            </div>
-            <div class="feature">
-              <h3>4. Human Supervision</h3>
-              <p>
-                A mixed-reality interface based on a VR headset displays the endoscopic view together with scene and system status information, allowing supervision and immediate switching to teleoperation with a haptic controller.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
-      <div class="container">
-        <div class="grid two">
-          <div class="section-card">
-            <h2>Centroid-Based Target Strategies</h2>
-            <div class="grid two" style="margin-top: 12px;">
-              <div class="feature">
-                <h3>C1 — Geometric centroid</h3>
-                <p>Uses the global spatial distribution of the bleeding region.</p>
-              </div>
-              <div class="feature">
-                <h3>C2 — Source-oriented centroid</h3>
-                <p>Prioritizes persistent pixels and tends to stay near the bleeding source.</p>
-              </div>
-              <div class="feature">
-                <h3>C3 — Front-oriented centroid</h3>
-                <p>Gives more weight to recent pixels and follows the bleeding front.</p>
-              </div>
-              <div class="feature">
-                <h3>C4 — Deepest-point target</h3>
-                <p>Selects the most interior point of the segmented bleeding region.</p>
-              </div>
-            </div>
-          </div>
-          <div class="section-card">
-            <h2>Bleeding Scenarios</h2>
-            <div class="grid three" style="margin-top: 12px;">
-              <div class="feature">
-                <h3>S1</h3>
-                <p>Source-centered accumulation: blood stays near the source in a near-horizontal configuration.</p>
-              </div>
-              <div class="feature">
-                <h3>S2</h3>
-                <p>Downstream flow accumulation: blood flows away from the source and accumulates distally.</p>
-              </div>
-              <div class="feature">
-                <h3>S3</h3>
-                <p>Bilateral flow distribution: blood spreads toward multiple accumulation regions.</p>
-              </div>
+              <img src="media/arquitectura.png" alt="Global Architecture" width="300">
             </div>
           </div>
         </div>
@@ -451,23 +347,6 @@
     </section>
 
     <section id="results">
-      <div class="container">
-        <div class="section-card">
-          <h2>Results</h2>
-          <p>
-            The bleeding segmentation model achieved strong pixel-wise prediction accuracy and stable threshold behavior, with a Dice coefficient of 0.686, IoU of 0.565, precision of 0.72, and recall of 0.73 on the independent test set. Qualitative results show that the system reliably captures the main bleeding regions under varying illumination, tissue appearance, and tool presence.
-          </p>
-          <div class="results-list">
-            <div class="result-item"><strong>Geometric analysis:</strong> centroid strategies generate distinct target locations across scenarios. C1 and C3 remain consistently close in spatial distance, but that geometric similarity does not necessarily translate into equivalent suction behavior.</div>
-            <div class="result-item"><strong>Scenario-dependent performance:</strong> no single target strategy is optimal in all cases. C2 and C4 perform best in source-centered bleeding, C4 dominates in downstream flow, and C1 is strongest in bilateral flow.</div>
-            <div class="result-item"><strong>Trade-off:</strong> lower suction times and higher suction efficiency tend to be associated with lower final suctioned area, while longer executions often clear a larger fraction of residual blood.</div>
-            <div class="result-item"><strong>Robustness:</strong> boxplots reveal meaningful differences in variability across strategies, especially under complex blood dynamics.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section>
       <div class="container">
         <div class="grid two">
           <div class="section-card">
@@ -483,34 +362,6 @@
               Add qualitative segmentation examples here.<br />
               Suggested content: frame + predicted mask pairs.
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="media">
-      <div class="container">
-        <div class="grid two">
-          <div class="section-card">
-            <h2>Videos</h2>
-            <div class="placeholder">
-              Embed your demo videos here.<br />
-              You can replace this block with YouTube iframes or HTML5 video tags.
-            </div>
-          </div>
-          <div class="section-card">
-            <h2>Code & Resources</h2>
-            <p>
-              Add links to your repository, datasets, CAD files, ROS packages, trained models, or supplementary materials.
-            </p>
-            <div class="button-row">
-              <a class="btn" href="#" title="Replace with repository link">GitHub Repository</a>
-              <a class="btn" href="#" title="Replace with supplementary material link">Supplementary Material</a>
-              <a class="btn" href="#" title="Replace with dataset link">Dataset</a>
-            </div>
-            <p class="muted" style="margin-top: 18px;">
-              Suggested additions: hardware setup details, control diagrams, videos comparing C1–C4, and a short explanation of how to reproduce the experiments.
-            </p>
           </div>
         </div>
       </div>
@@ -533,7 +384,7 @@
   </main>
 
   <footer>
-    Replace placeholder buttons, figures, and media links with your final assets before publishing on GitHub Pages.
+    
   </footer>
 </body>
 </html>
