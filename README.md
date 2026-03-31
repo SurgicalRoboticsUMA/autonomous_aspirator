@@ -6,7 +6,9 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Under%20Review-orange">
-<!--  <img src="https://img.shields.io/badge/Project-Page-blue"> -->
+  <a href="code">
+    <img src="https://img.shields.io/badge/Code-blue">
+  </a>
  <!--  <img src="https://img.shields.io/badge/Code-Python-green"> -->
 </p>
 
@@ -36,7 +38,7 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 ## 🧠 Method
 
 <p align="center">
-  <img src="media/arquitectura.png" width=800>
+  <img src="media/arquitectura.png">
 </p>
 
 ### Pipeline
@@ -53,7 +55,7 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 ## 🤖 Experimental setup
 
 <p align="center">
-  <img src="media/experimental-setup.png" width=800 >
+  <img src="media/experimental-setup.png">
 </p>
 
 - Robotic aspirator using a UR3 robot with a robotic surgical aspirator.
