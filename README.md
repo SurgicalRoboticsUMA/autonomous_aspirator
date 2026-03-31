@@ -50,11 +50,10 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 
 ---
 
-## 🧠 Experimental setup
+## 🤖 Experimental setup
 
 <p align="center">
-  <img src="media/setup.png" width=538>
-  <img src="media/setup_hri.png" width=300>
+  <img src="media/experimental-setup.png" width=800 >
 </p>
 
 - Robotic aspirator using a UR3 robot with a robotic surgical aspirator.
@@ -74,36 +73,22 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 
 ---
 
-## 🎬 🎥 Demo
+## 🎥 Demo
 
-* ▶️ Full experiment: [Add link here]
-* ▶️ Failure cases: [Add link here]
+* ▶️Robotic aspirator performance:
+<a href="https://www.youtube.com/watch?v=X9UfWnPaLBQ" target="_blank">
+  <img src="https://img.youtube.com/vi/X9UfWnPaLBQ/maxresdefault.jpg" alt="Experimental Setup">
+</a>
 
+* ▶️ Blood segmentation in real surgical images:
+<a href="https://www.youtube.com/watch?v=_BtoFf8n64o" target="_blank">
+  <img src="https://img.youtube.com/vi/_BtoFf8n64o/maxresdefault.jpg" alt="Blood segmentation in real surgical images">
+</a>
 
----
-
-## 📖 Paper
-
-📄 Under review (link coming soon)
-
----
-
-## 🌐 Project Page
-
-https://surgicalroboticsuma.github.io/autonomous_aspirator/
-
----
 
 ## 📖 Citation
 
-```bibtex
-@article{autonomous_aspirator2025,
-  title={Autonomous Surgical Aspirator},
-  author={Surgical Robotics UMA},
-  journal={Under review},
-  year={2025}
-}
-```
+Comming soon
 
 ---
 
