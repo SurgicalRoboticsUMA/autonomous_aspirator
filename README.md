@@ -15,7 +15,7 @@
 ## 🔍 Overview
 
 <p align="center">
-  <img src="media/Escenario.PNG" width=800 >
+  <img src="media/Escenario.PNG" >
 </p>
 
 <p align="justify">
@@ -77,12 +77,12 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 
 * ▶️Robotic aspirator performance:
 <a href="https://www.youtube.com/watch?v=X9UfWnPaLBQ" target="_blank">
-  <img src="https://img.youtube.com/vi/X9UfWnPaLBQ/maxresdefault.jpg" alt="Experimental Setup">
+  <img src="https://img.youtube.com/vi/X9UfWnPaLBQ/maxresdefault.jpg" alt="Experimental Setup" width="400">
 </a>
 
 * ▶️ Blood segmentation in real surgical images:
 <a href="https://www.youtube.com/watch?v=_BtoFf8n64o" target="_blank">
-  <img src="https://img.youtube.com/vi/_BtoFf8n64o/maxresdefault.jpg" alt="Blood segmentation in real surgical images">
+  <img src="https://img.youtube.com/vi/_BtoFf8n64o/maxresdefault.jpg" alt="Blood segmentation in real surgical images" width="400">
 </a>
 
 
