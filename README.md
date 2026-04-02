@@ -6,9 +6,10 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Under%20Review-orange">
-  <a href="code">
-    <img src="https://img.shields.io/badge/Code-blue">
+  <a href="https://www.preprints.org/manuscript/202604.0123" target= "_blank">
+    <img src="https://img.shields.io/badge/Preprint-202604.0123-purple">
   </a>
+  
  <!--  <img src="https://img.shields.io/badge/Code-Python-green"> -->
 </p>
 
@@ -86,6 +87,10 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 <a href="https://www.youtube.com/watch?v=_BtoFf8n64o" target="_blank">
   <img src="https://img.youtube.com/vi/_BtoFf8n64o/maxresdefault.jpg" alt="Blood segmentation in real surgical images" width="400">
 </a>
+
+## 💻 Code
+
+Code available [here]<a href="Code" target="_blank">.
 
 
 ## 📖 Citation
