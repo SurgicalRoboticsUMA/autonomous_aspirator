@@ -6,11 +6,12 @@
 
 <p align="left">
   <img src="https://img.shields.io/badge/Status-Under%20Review-orange">
-  <a href="https://www.preprints.org/manuscript/202604.0123" target= "_blank">
+  
+  <a href="https://www.preprints.org/manuscript/202604.0123" target="_blank" rel="noopener noreferrer">
     <img src="https://img.shields.io/badge/Preprint-202604.0123-purple">
   </a>
   
- <!--  <img src="https://img.shields.io/badge/Code-Python-green"> -->
+  <!--  <img src="https://img.shields.io/badge/Code-Python-green"> -->
 </p>
 
 ---
@@ -90,8 +91,7 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
 
 ## 💻 Code
 
-Code available [here]<a href="Code" target="_blank">.
-
+Code available [here 🔗](https://github.com/SurgicalRoboticsUMA/autonomous_aspirator/tree/main/Code)
 
 ## 📖 Citation
 
