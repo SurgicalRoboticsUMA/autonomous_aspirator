@@ -19,7 +19,7 @@ El sistema está compuesto por tres bloques principales:
 
 ---
 
-## 1. Código ESP32
+## 1. Código ESP32 - (esp32_wifi.ino)
 
 Este código conecta el ESP32 por WiFi con ROS mediante `rosserial_tcp` y controla una salida digital:
 
@@ -53,7 +53,7 @@ Este código conecta el ESP32 por WiFi con ROS mediante `rosserial_tcp` y contro
 
 ---
 
-## 2. Nodo `potential_field_hybrid`
+## 2. Nodo `potential_field_hybrid` - autonomous_aspirator_navigation.py
 
 Este nodo implementa un controlador basado en **campos potenciales artificiales** para mover el robot aspirador hacia el punto de sangrado detectado.
 
@@ -85,7 +85,7 @@ Este nodo implementa un controlador basado en **campos potenciales artificiales*
 
 ---
 
-## 3. Nodo `bleending_detector_node`
+## 3. Nodo `bleending_detector_node` - (bleeding_detection.py)
 
 Este nodo realiza la detección visual de sangre usando una cámara **Intel RealSense** y una red neuronal **U-Net**.
 
