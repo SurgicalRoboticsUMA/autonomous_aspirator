@@ -21,7 +21,7 @@ El sistema está compuesto por tres bloques principales:
 
 ## 1. Código ESP32
 
-Este código conecta el ESP32 por WiFi con ROS mediante `rosserial_tcp` y controla dos salidas digitales:
+Este código conecta el ESP32 por WiFi con ROS mediante `rosserial_tcp` y controla una salida digital:
 
 - **Pin 19**: aspirador
 
