@@ -6,7 +6,7 @@ Este proyecto integra visión artificial, control robótico y hardware embebido 
 
 El sistema está compuesto por tres bloques principales:
 
-- **ESP32 + ROSSerial TCP**: controla el aspirador por wifi.
+- **ESP32 + ROSSerial TCP**: controla el aspirador.
 - **Nodo `potential_field_hybrid`**: mueve el robot aspirador hacia el objetivo detectado.
 - **Nodo `bleending_detector_node`**: detecta sangre con una U-Net y publica el punto objetivo en 3D.
 
