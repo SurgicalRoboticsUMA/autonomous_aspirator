@@ -1,4 +1,4 @@
-# Design and Implementation of an Autonomous Surgical Robotic
+# Design and Implementation of an Autonomous Surgical Robotic Aspirator
 
 <p align="center">
   <i>E. Góngora-Rodríguez, I. Rivas-Blanco, A. Galán-Cuenca, C. López-Casado, I. García-Morales and V.F. Muñoz</i><br>
