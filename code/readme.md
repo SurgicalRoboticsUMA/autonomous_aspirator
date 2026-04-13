@@ -137,13 +137,15 @@ Skip connections are used to preserve spatial detail, which is critical for accu
 
 The output is a binary probability map that highlights suspected bleeding areas at pixel level.
 
-### Training & Results
+### Training 
 
 | Category   | Details |
 |------------|--------|
 | **Dataset** | ~750 labeled laparoscopic images |
 | **Loss** | Binary Cross-Entropy (+ Dice) |
 | **Optimizer** | Adam |
+
+### Results
 
 | **Metric** | **Value** |
 |--------------|----------|
