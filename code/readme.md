@@ -143,11 +143,6 @@ The bleeding detection module is based on a :contentReference[oaicite:0]{index=0
 | IoU | ~0.75–0.82 |
 | FPS (GPU) | ~10–15 |
 
-### Performance
-
-- Robust under surgical noise and lighting variability  
-- Stable segmentation for reliable centroid extraction  
-- Suitable for real-time robotic control  
 
 
 ---
