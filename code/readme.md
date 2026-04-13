@@ -125,6 +125,33 @@ The `sangre_ok` signal is activated when the detected area exceeds a maximum thr
 
 ---
 
+## 4. Blood Segmentation Network
+
+The bleeding detection module is based on a :contentReference[oaicite:0]{index=0}, widely used for biomedical image segmentation.
+
+### Model Summary
+
+- **Input**: RGB images (Intel RealSense)  
+- **Output**: Binary mask (blood / non-blood)  
+- **Model**: `unet_blood_segmentation_final.h5`  
+
+### Training
+
+- ~750 labeled laparoscopic images  
+- Loss: Binary Cross-Entropy (+ Dice)  
+- Optimizer: Adam  
+
+### Results
+
+- **Dice coefficient**: ~0.85–0.90  
+- **IoU**: ~0.75–0.82  
+- **Real-time performance**: ~10–15 FPS (GPU)  
+
+- Robust detection under surgical noise and lighting variability  
+- Stable segmentation enabling reliable centroid extraction for robotic control  
+
+---
+
 ## Dependencies
 
 ### ESP32
