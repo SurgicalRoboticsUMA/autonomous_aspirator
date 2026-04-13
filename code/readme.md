@@ -127,7 +127,15 @@ The `sangre_ok` signal is activated when the detected area exceeds a maximum thr
 
 ## 4. Blood Segmentation Network
 
-The bleeding detection module is based on a :contentReference[oaicite:0]{index=0}, widely used for biomedical image segmentation.
+The bleeding detection module is based on a U-Net architecture, widely used for biomedical image segmentation.
+
+### Network Behavior
+
+The model follows a U-Net architecture, where an encoder extracts hierarchical visual features from the input image and a decoder progressively reconstructs a segmentation mask.
+
+Skip connections are used to preserve spatial detail, which is critical for accurately delimiting small or irregular bleeding regions in laparoscopic scenes.
+
+The output is a binary probability map that highlights suspected bleeding areas at pixel level.
 
 ### Training & Results
 
