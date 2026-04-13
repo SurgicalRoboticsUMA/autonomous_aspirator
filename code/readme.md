@@ -127,28 +127,26 @@ The `sangre_ok` signal is activated when the detected area exceeds a maximum thr
 
 ## 4. Blood Segmentation Network
 
-The bleeding detection module is based on a U-Net architecture, widely used for biomedical image segmentation.
+### Training & Results
 
-### Model Summary
+| Category   | Details |
+|------------|--------|
+| **Dataset** | ~750 labeled laparoscopic images |
+| **Loss** | Binary Cross-Entropy (+ Dice) |
+| **Optimizer** | Adam |
 
-- **Input**: RGB images (Intel RealSense)  
-- **Output**: Binary mask (blood / non-blood)  
-- **Model**: `unet_blood_segmentation_final.h5`  
+| **Metric** | **Value** |
+|--------------|----------|
+| Dice coefficient | ~0.85–0.90 |
+| IoU | ~0.75–0.82 |
+| FPS (GPU) | ~10–15 |
 
-### Training
+### Performance
 
-- ~750 labeled laparoscopic images  
-- Loss: Binary Cross-Entropy (+ Dice)  
-- Optimizer: Adam  
+- Robust under surgical noise and lighting variability  
+- Stable segmentation for reliable centroid extraction  
+- Suitable for real-time robotic control  
 
-### Results
-
-- **Dice coefficient**: ~0.85–0.90  
-- **IoU**: ~0.75–0.82  
-- **Real-time performance**: ~10–15 FPS (GPU)  
-
-- Robust detection under surgical noise and lighting variability  
-- Stable segmentation enabling reliable centroid extraction for robotic control  
 
 ---
 
