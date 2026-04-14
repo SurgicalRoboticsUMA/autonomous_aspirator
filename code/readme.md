@@ -131,11 +131,11 @@ The bleeding detection module is based on a U-Net architecture, widely used for 
 
 ### Network Behavior
 
-The model follows a U-Net architecture, where an encoder extracts hierarchical visual features from the input image and a decoder progressively reconstructs a segmentation mask.
+The model follows an encoder–decoder structure, where the encoder extracts hierarchical visual features from the input image and the decoder progressively reconstructs a segmentation mask.
 
 Skip connections are used to preserve spatial detail, which is critical for accurately delimiting small or irregular bleeding regions in laparoscopic scenes.
 
-The output is a binary probability map that highlights suspected bleeding areas at pixel level.
+The output is a binary probability map highlighting suspected bleeding areas at pixel level.
 
 ### Training 
 
@@ -156,8 +156,7 @@ The output is a binary probability map that highlights suspected bleeding areas 
 ### Model
 
 The trained model is available here:  
-Download U-Net model (.h5) (https://drive.google.com/file/d/1EsfUUtAdVL2LWCqOsIXl2zJLWWCghfhn/view?usp=sharing)
-
+👉 [Download U-Net model (.h5)](https://drive.google.com/file/d/1EsfUUtAdVL2LWCqOsIXl2zJLWWCghfhn/view?usp=sharing)
 
 
 ---
