@@ -153,6 +153,11 @@ The output is a binary probability map that highlights suspected bleeding areas 
 | IoU | ~0.75–0.82 |
 | FPS (GPU) | ~10–15 |
 
+### Model
+
+The trained model is available here:  
+Download U-Net model (.h5) (https://drive.google.com/file/d/1EsfUUtAdVL2LWCqOsIXl2zJLWWCghfhn/view?usp=sharing)
+
 
 
 ---
