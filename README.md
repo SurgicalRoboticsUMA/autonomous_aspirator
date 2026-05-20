@@ -95,6 +95,12 @@ Additionally, a mixed-reality human–robot interaction interface is incorporate
   <img src="https://img.youtube.com/vi/_BtoFf8n64o/maxresdefault.jpg" alt="Blood segmentation in real surgical images" width="400">
 </a>
 
+* ▶️ Obstacle avoidance:
+<a href="https://www.youtube.com/watch?v=38xOESqY4n4" target="_blank">
+  <img src="https://img.youtube.com/vi/38xOESqY4n4/maxresdefault.jpg" alt="Obstacle avoidance" width="400">
+</a>
+
+
 ## 💻 Code
 
 Code available here [🔗](https://github.com/SurgicalRoboticsUMA/autonomous_aspirator/tree/main/code)
