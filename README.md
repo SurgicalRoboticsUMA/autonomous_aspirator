@@ -116,8 +116,6 @@ Code available here [🔗](https://github.com/SurgicalRoboticsUMA/autonomous_asp
 
 ## 📖 Citation
 
-Export citation file: [BibTeX](javascript:window.document.forms['export-bibtex'].submit()) | EndNote | RIS
-
 Góngora-Rodríguez, E., Rivas-Blanco, I., Galán-Cuenca, Á., López-Casado, C., García-Morales, I., & Muñoz, V. F. (2026). Design and Implementation of an Autonomous Surgical Robotic Aspirator. Electronics, 15(12), 2551. https://doi.org/10.3390/electronics15122551
 
 ---
