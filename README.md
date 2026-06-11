@@ -4,11 +4,16 @@
   <i>E. Góngora-Rodríguez, I. Rivas-Blanco, A. Galán-Cuenca, C. López-Casado, I. García-Morales and V.F. Muñoz</i><br>
 </p>
 
-<p align="left">
-  <img src="https://img.shields.io/badge/Status-Under%20Review-orange">
+  <a href="https://www.mdpi.com/2079-9292/15/12/2551" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Paper-MDPI Electronics-green">
+  </a>
   
   <a href="https://www.preprints.org/manuscript/202604.0123" target="_blank" rel="noopener noreferrer">
-    <img src="https://img.shields.io/badge/Preprint-202604.0123-purple">
+    <img src="https://img.shields.io/badge/Preprint-202604.0123-blue">
+  </a>
+
+  <a href="https://www.mdpi.com/article/10.3390/electronics15122551/s1" target="_blank" rel="noopener noreferrer">
+    <img src="https://img.shields.io/badge/Download-Supplementary Materials-orange">
   </a>
   
 <!-- 
@@ -19,6 +24,10 @@
 
  
 </p>
+
+📄 Published in MDPI Electronics (2026)
+
+📌 DOI: 10.3390/electronics15122551 
 
 ---
 
